@@ -36,3 +36,8 @@ npm run dev
 
 Running test:
 npm run test
+
+Orchestrator MFE
+
+This is a simple MFE, it manages layout, routing (via state) and the theme (personal choice).
+I could have used react router but for this simple case, simple state routing is enough
