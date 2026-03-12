@@ -1,0 +1,86 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FormField > snapshots > matches snapshot with default props 1`] = `
+<div>
+  <div
+    class="flex flex-col mt-4"
+  >
+    <label
+      class="text-sm font-medium mb-2"
+      for="field-name"
+      style="color: var(--color-primary);"
+    >
+      Name
+    </label>
+    <input
+      aria-invalid="false"
+      class="px-3 py-2 text-sm rounded border transition-colors"
+      id="field-name"
+      inputmode="text"
+      style="background-color: var(--color-input-bg); border-color: var(--color-border); color: var(--color-primary);"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`FormField > snapshots > matches snapshot with error 1`] = `
+<div>
+  <div
+    class="flex flex-col mt-4"
+  >
+    <label
+      class="text-sm font-medium mb-2"
+      for="field-name"
+      style="color: var(--color-primary);"
+    >
+      Name
+    </label>
+    <input
+      aria-describedby="field-name-error"
+      aria-invalid="true"
+      class="px-3 py-2 text-sm rounded border transition-colors"
+      id="field-name"
+      inputmode="text"
+      style="background-color: var(--color-input-bg); border-color: red; color: var(--color-primary);"
+      type="text"
+      value=""
+    />
+    <span
+      class="text-xs mt-2"
+      id="field-name-error"
+      role="alert"
+      style="color: red;"
+    >
+      Name is required
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FormField > snapshots > matches snapshot with placeholder 1`] = `
+<div>
+  <div
+    class="flex flex-col mt-4"
+  >
+    <label
+      class="text-sm font-medium mb-2"
+      for="field-name"
+      style="color: var(--color-primary);"
+    >
+      Name
+    </label>
+    <input
+      aria-invalid="false"
+      class="px-3 py-2 text-sm rounded border transition-colors"
+      id="field-name"
+      inputmode="text"
+      placeholder="Enter name"
+      style="background-color: var(--color-input-bg); border-color: var(--color-border); color: var(--color-primary);"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

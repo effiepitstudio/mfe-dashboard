@@ -24,7 +24,7 @@
 
     <div
       v-if="entries.length === 0"
-      class="text-center py-10 px-0 text-sm text-red-800"
+      class="text-center py-10 px-0 text-sm text-secondary"
       role="status"
     >
       <p>No entries yet.. Fill out the form to see data here</p>

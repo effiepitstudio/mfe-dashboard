@@ -41,4 +41,7 @@ export const COLORS: ReadonlyArray<{ value: string; label: string }> = [
   { value: "black", label: "Black" },
   { value: "green", label: "green" },
   { value: "purple", label: "purple" },
+  { value: "teal", label: "teal" },
+  { value: "blue", label: "blue" },
+  { value: "orange", label: "orange" },
 ] as const;

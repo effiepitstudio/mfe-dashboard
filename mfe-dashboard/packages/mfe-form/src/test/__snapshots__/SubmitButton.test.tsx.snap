@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SubmitButton > snapshots > matches snapshot 1`] = `
+<div>
+  <button
+    aria-label="Submit Entry"
+    class="submit-button relative items-center justify-center text-bg overflow-hidden bg-primary border-solid cursor-pointer w-full"
+    type="button"
+  >
+    <span
+      class="submit-button__label relative z-10"
+    >
+      Submit Entry
+    </span>
+  </button>
+</div>
+`;
+
+exports[`SubmitButton > snapshots > matches snapshot when disabled 1`] = `
+<div>
+  <button
+    aria-label="Submit Entry"
+    class="submit-button relative items-center justify-center text-bg overflow-hidden bg-primary border-solid cursor-pointer w-full"
+    disabled=""
+    type="button"
+  >
+    <span
+      class="submit-button__label relative z-10"
+    >
+      Submit Entry
+    </span>
+  </button>
+</div>
+`;

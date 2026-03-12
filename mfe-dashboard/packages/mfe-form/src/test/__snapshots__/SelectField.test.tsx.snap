@@ -1,0 +1,130 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SelectField > snapshots > matches snapshot with default props 1`] = `
+<div>
+  <div
+    class="flex flex-col mt-4"
+  >
+    <label
+      class="text-sm font-medium mb-2"
+      for="field-country"
+      style="color: var(--color-primary);"
+    >
+      Country
+    </label>
+    <select
+      aria-invalid="false"
+      class="px-3 py-2 text-sm rounded border transition-colors appearance-none"
+      id="field-country"
+      style="background-color: var(--color-input-bg); border-color: var(--color-border); color: var(--secondary);"
+    >
+      <option
+        value="GR"
+      >
+        Greece
+      </option>
+      <option
+        value="CY"
+      >
+        Cyprus
+      </option>
+      <option
+        value="US"
+      >
+        United States
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`SelectField > snapshots > matches snapshot with error 1`] = `
+<div>
+  <div
+    class="flex flex-col mt-4"
+  >
+    <label
+      class="text-sm font-medium mb-2"
+      for="field-country"
+      style="color: var(--color-primary);"
+    >
+      Country
+    </label>
+    <select
+      aria-describedby="field-country-error"
+      aria-invalid="true"
+      class="px-3 py-2 text-sm rounded border transition-colors appearance-none"
+      id="field-country"
+      style="background-color: var(--color-input-bg); border-color: red; color: var(--secondary);"
+    >
+      <option
+        value="GR"
+      >
+        Greece
+      </option>
+      <option
+        value="CY"
+      >
+        Cyprus
+      </option>
+      <option
+        value="US"
+      >
+        United States
+      </option>
+    </select>
+    <span
+      class="text-xs mt-2"
+      id="field-country-error"
+      role="alert"
+      style="color: red;"
+    >
+      Please select a country
+    </span>
+  </div>
+</div>
+`;
+
+exports[`SelectField > snapshots > matches snapshot with placeholder 1`] = `
+<div>
+  <div
+    class="flex flex-col mt-4"
+  >
+    <label
+      class="text-sm font-medium mb-2"
+      for="field-country"
+      style="color: var(--color-primary);"
+    >
+      Country
+    </label>
+    <select
+      aria-invalid="false"
+      class="px-3 py-2 text-sm rounded border transition-colors appearance-none"
+      id="field-country"
+      style="background-color: var(--color-input-bg); border-color: var(--color-border); color: var(--secondary);"
+    >
+      <option
+        disabled=""
+        value=""
+      >
+        Select a country
+      </option>
+      <option
+        value="GR"
+      >
+        Greece
+      </option>
+      <option
+        value="CY"
+      >
+        Cyprus
+      </option>
+      <option
+        value="US"
+      >
+        United States
+      </option>
+    </select>
+  </div>
+</div>
+`;
