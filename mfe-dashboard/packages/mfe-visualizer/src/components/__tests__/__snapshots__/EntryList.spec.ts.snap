@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EntryList > rendering > matches snapshot with empty entries 1`] = `
+"<div>
+  <h3 class="text-sm font-semibold mb-3 text-primary">Entries by time</h3>
+  <ul class="list-none p-0 flex flex-col gap-2" role="list" aria-label="Entries"></ul>
+</div>"
+`;
+
+exports[`EntryList > rendering > matches snapshot with entries 1`] = `
+"<div>
+  <h3 class="text-sm font-semibold mb-3 text-primary">Entries by time</h3>
+  <ul class="list-none p-0 flex flex-col gap-2" role="list" aria-label="Entries">
+    <li class="py-2 px-0 border-solid border-b border-border" role="listitem">
+      <div class="flex items-center justify-between"><span class="font-semibold text-sm text-primary">Effie</span><time class="text-xs text-secondary" datetime="2024-01-02T10:00:00Z">formatted:2024-01-02T10:00:00Z</time></div>
+      <div class="flex gap-1 text-xs text-secondary mt-1"><span>Engineer, </span><span>160, </span><span>Greece</span></div>
+    </li>
+    <li class="py-2 px-0 border-solid border-b border-border" role="listitem">
+      <div class="flex items-center justify-between"><span class="font-semibold text-sm text-primary">Sevi</span><time class="text-xs text-secondary" datetime="2024-01-01T10:00:00Z">formatted:2024-01-01T10:00:00Z</time></div>
+      <div class="flex gap-1 text-xs text-secondary mt-1"><span>Designer, </span><span>168, </span><span>Cyprus</span></div>
+    </li>
+  </ul>
+</div>"
+`;

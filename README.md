@@ -54,3 +54,4 @@ I could have used react router but for this simple case, simple state routing is
 
 1. Storybook for mocking components as the app scales, for maintaining a good design system, reusable components strategy
 2. Visualizations need adjustments for the theming
+3. User options in the vue app for Chart type and Column layout can be stored in persistedState so that when the user navigates from one MFE to the other the preference is kept for a better UX

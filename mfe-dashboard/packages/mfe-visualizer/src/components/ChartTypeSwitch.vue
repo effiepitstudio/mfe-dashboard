@@ -6,7 +6,7 @@
   >
     <button
       class="py-1 px-2 text-xs border-none bg-transparent text-secondary cursor-pointer transition-all hover:text-primary"
-      :class="{ 'font-semibold text-primary bg-primary': chartType === 'bar' }"
+      :class="{ 'font-semibold !text-primary bg-primary': chartType === 'bar' }"
       :aria-checked="chartType === 'bar'"
       role="radio"
       @click="$emit('update:chartType', 'bar')"
@@ -15,7 +15,7 @@
     </button>
     <button
       class="py-1 px-2 text-xs border-none bg-transparent text-secondary cursor-pointer transition-all hover:text-primary"
-      :class="{ 'font-semibold text-primary bg-primary': chartType === 'pie' }"
+      :class="{ 'font-semibold !text-primary bg-primary': chartType === 'pie' }"
       :aria-checked="chartType === 'pie'"
       role="radio"
       @click="$emit('update:chartType', 'pie')"

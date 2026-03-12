@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex gap-1 p-0.5"
+    class="items-center gap-1 p-0.5"
     role="radiogroup"
     aria-label="Column layout"
   >
     <button
-      class="border-none rounded-sm bg-transparent text-secondary cursor-pointer transition-all hover:text-primary"
-      :class="{ 'bg-primary text-bg': columnCount === 1 }"
+      class="border-none rounded-sm bg-transparent text-primary opacity-40 cursor-pointer transition-all hover:text-primary"
+      :class="{ '!opacity-100': columnCount === 1 }"
       role="radio"
       :aria-checked="columnCount === 1"
       aria-label="Single column layout"
@@ -35,8 +35,8 @@
       </svg>
     </button>
     <button
-      class="border-none rounded-sm bg-transparent text-secondary cursor-pointer transition-all hover:text-primary"
-      :class="{ 'bg-primary text-bg': columnCount === 2 }"
+      class="border-none rounded-sm bg-transparent text-primary opacity-40 cursor-pointer transition-all hover:text-primary"
+      :class="{ '!opacity-100': columnCount === 2 }"
       role="radio"
       :aria-checked="columnCount === 2"
       aria-label="Two column layout"

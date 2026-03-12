@@ -29,7 +29,7 @@ export function useEntriesSubscription() {
       EVENT_NAMES.ENTRIES_UPDATED,
       handleEntriesUpdated,
     );
-    // Request current state from form MFE
+
     EventBus.dispatch(EVENT_NAMES.ENTRIES_REQUESTED, {
       ciphertext: "",
       iv: "",

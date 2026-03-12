@@ -23,8 +23,8 @@
           >
         </div>
         <div class="flex gap-1 text-xs text-secondary mt-1">
-          <span>{{ entry.profession }}</span>
-          <span>{{ entry.height }}</span>
+          <span>{{ entry.profession + ", " }}</span>
+          <span>{{ entry.height + ", " }}</span>
           <span>{{ getCountryLabel(entry.country) }}</span>
         </div>
       </li>

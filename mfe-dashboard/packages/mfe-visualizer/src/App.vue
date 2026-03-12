@@ -11,7 +11,7 @@
         aria-label="Display options"
       >
         <ColumnToggle
-          class="hidden sm:block"
+          class="hidden sm:flex"
           :columnCount="columnCount"
           @update:columnCount="handleColumnCountChange"
         />

@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TopFiveStats > rendering > matches snapshot 1`] = `
+"<div>
+  <h3 class="text-sm font-semibold mb-3 text-primary"> Top 5 most common for each field </h3>
+  <div class="flex flex-col gap-4">
+    <div>
+      <h4 class="text-xs font-semibold text-secondary uppercase mb-1">Country</h4>
+      <ol class="list-none p-0 flex flex-col gap-1" aria-label="Top 5 undefined">
+        <li class="flex justify-start text-sm gap-1 text-primary w-full"><span class="min-w-[24px]">1.</span><span class="font-semibold flex-1 min-w-0">Greece</span><span class="text-xs opacity-80 ml-auto">Appearances: 3</span></li>
+        <li class="flex justify-start text-sm gap-1 text-primary w-full"><span class="min-w-[24px]">2.</span><span class="font-semibold flex-1 min-w-0">Cyprus</span><span class="text-xs opacity-80 ml-auto">Appearances: 2</span></li>
+      </ol>
+    </div>
+    <div>
+      <h4 class="text-xs font-semibold text-secondary uppercase mb-1">Profession</h4>
+      <ol class="list-none p-0 flex flex-col gap-1" aria-label="Top 5 undefined">
+        <li class="flex justify-start text-sm gap-1 text-primary w-full"><span class="min-w-[24px]">1.</span><span class="font-semibold flex-1 min-w-0">Engineer</span><span class="text-xs opacity-80 ml-auto">Appearances: 5</span></li>
+      </ol>
+    </div>
+  </div>
+</div>"
+`;

@@ -80,15 +80,17 @@ function buildChartData(dist: FieldDistribution) {
 const chartOptions = computed(() => ({
   responsive: true,
   maintainAspectRatio: true,
-  scales: {
-    y: {
-      beginAtZero: true,
-      ticks: {
-        stepSize: 1,
-        precision: 0,
+  ...(props.chartType === "bar" && {
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 1,
+          precision: 0,
+        },
       },
     },
-  },
+  }),
   plugins: {
     legend: {
       position: "bottom" as const,
