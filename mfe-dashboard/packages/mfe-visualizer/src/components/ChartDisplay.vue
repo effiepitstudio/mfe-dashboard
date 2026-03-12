@@ -4,7 +4,7 @@
       v-for="dist in distributions"
       :key="dist.field"
     >
-      <h3 class="text-xs font-semibold text-color-muted uppercase mb-2">
+      <h3 class="text-xs font-semibold text-secondary uppercase mb-2">
         {{ dist.fieldLabel }}
       </h3>
       <div class="max-h-[400px] relative">

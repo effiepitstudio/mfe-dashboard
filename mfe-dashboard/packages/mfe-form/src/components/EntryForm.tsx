@@ -162,7 +162,7 @@ export const EntryForm: React.FC = () => {
           error={validationErrors.favoriteMovie}
           placeholder="e.g Dunkirk"
         />
-        <div className="pt-4">
+        <div>
           <SubmitButton
             onClick={handleSubmit}
             label="Submit Entry"

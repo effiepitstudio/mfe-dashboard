@@ -35,7 +35,7 @@ export const FormField: React.FC<FormFieldsProps> = ({
     <div className="flex flex-col mt-4">
       <label
         htmlFor={fieldId}
-        className="text-sm font-medium"
+        className="text-sm font-medium mb-2"
         style={{ color: "var(--color-primary)" }}
       >
         {label}
@@ -63,7 +63,7 @@ export const FormField: React.FC<FormFieldsProps> = ({
       {error && (
         <span
           id={errorId}
-          className="text-sm"
+          className="text-xs mt-2"
           style={{ color: "red" }}
           role="alert"
         >

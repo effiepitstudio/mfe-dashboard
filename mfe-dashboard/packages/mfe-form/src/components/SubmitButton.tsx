@@ -16,7 +16,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = ({
     type="button"
     onClick={onClick}
     disabled={disabled}
-    className="submit-button relative items-center justify-center text-primary overflow-hidden bg-primary border-solid cursor-pointer w-full"
+    className="submit-button relative items-center justify-center text-bg overflow-hidden bg-primary border-solid cursor-pointer w-full"
     aria-label={label}
   >
     <span className="submit-button__label relative z-10">{label}</span>

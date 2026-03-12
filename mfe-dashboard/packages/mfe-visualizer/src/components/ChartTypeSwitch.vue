@@ -5,20 +5,22 @@
     aria-label="Chart type"
   >
     <button
-        class="py-1 px-2 text-xs border-none bg-transparent text-color-muted cursor-pointer transition-all hover:text-primary"
-        :class="{'font-semibold text-primary bg-primary': chartType === 'bar'}"
-        :aria-checked="chartType === 'bar'"
-        role="radio"
-        @click="$emit('update:chartType', 'bar')">
-            Bar
+      class="py-1 px-2 text-xs border-none bg-transparent text-secondary cursor-pointer transition-all hover:text-primary"
+      :class="{ 'font-semibold text-primary bg-primary': chartType === 'bar' }"
+      :aria-checked="chartType === 'bar'"
+      role="radio"
+      @click="$emit('update:chartType', 'bar')"
+    >
+      Bar
     </button>
     <button
-        class="py-1 px-2 text-xs border-none bg-transparent text-color-muted cursor-pointer transition-all hover:text-primary"
-        :class="{'font-semibold text-primary bg-primary': chartType === 'pie'}"
-        :aria-checked="chartType === 'pie'"
-        role="radio"
-        @click="$emit('update:chartType', 'pie')">
-            Pie
+      class="py-1 px-2 text-xs border-none bg-transparent text-secondary cursor-pointer transition-all hover:text-primary"
+      :class="{ 'font-semibold text-primary bg-primary': chartType === 'pie' }"
+      :aria-checked="chartType === 'pie'"
+      role="radio"
+      @click="$emit('update:chartType', 'pie')"
+    >
+      Pie
     </button>
   </div>
 </template>

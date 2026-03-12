@@ -17,12 +17,12 @@
             entry.name
           }}</span>
           <time
-            class="text-xs text-color-muted"
+            class="text-xs text-secondary"
             :datetime="entry.timestamp"
             >{{ formatTimestamp(entry.timestamp) }}</time
           >
         </div>
-        <div class="flex gap-1 text-xs text-color-muted mt-1">
+        <div class="flex gap-1 text-xs text-secondary mt-1">
           <span>{{ entry.profession }}</span>
           <span>{{ entry.height }}</span>
           <span>{{ getCountryLabel(entry.country) }}</span>

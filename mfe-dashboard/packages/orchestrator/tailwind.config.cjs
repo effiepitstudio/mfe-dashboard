@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        surface: "var(--color-surface)",
-        "color-muted": "var(--color-muted)",
+        bg: "var(--color-bg)",
+        secondary: "var(--secondary)",
         border: "var(--color-border)",
         primary: "var(--color-primary)",
       },

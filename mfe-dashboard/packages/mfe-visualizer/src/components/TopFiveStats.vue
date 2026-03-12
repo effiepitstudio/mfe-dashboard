@@ -8,7 +8,7 @@
         v-for="stat in topFiveStats"
         :key="stat.fieldLabel"
       >
-        <h4 class="text-xs font-semibold text-color-muted uppercase mb-1">
+        <h4 class="text-xs font-semibold text-secondary uppercase mb-1">
           {{ stat.fieldLabel }}
         </h4>
         <ol
