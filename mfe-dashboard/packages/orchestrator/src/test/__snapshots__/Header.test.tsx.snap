@@ -1,0 +1,115 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header > snapshots > matches snapshot with form active 1`] = `
+<div>
+  <header
+    class="border-b px-4 sm:px-6 py-3 flex items-center justify-between sticky top-0 z-10 bg-bg"
+    style="border-color: var(--color-border);"
+  >
+    <nav
+      aria-label="Main navigation"
+      class="flex items-center gap-6"
+    >
+      <h1
+        class="text-sm font-semibold"
+      >
+        Dashboard
+      </h1>
+      <button
+        aria-current="page"
+        class="text-sm px-3 py-1 rounded transition-colors duration-150 font-semibold
+            "
+        style="color: var(--color-primary); background-color: var(--color-border);"
+      >
+        Form
+      </button>
+      <button
+        class="text-sm px-3 py-1 rounded transition-colors duration-150 opacity-60 hover:opacity-100
+            "
+        style="color: var(--color-primary); background-color: transparent;"
+      >
+        Visualizer
+      </button>
+    </nav>
+    <button
+      aria-label="Switch to dark theme"
+      class="p-2 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+      title="Dark mode"
+    >
+      <svg
+        class="lucide lucide-moon-icon lucide-moon"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+        />
+      </svg>
+    </button>
+  </header>
+</div>
+`;
+
+exports[`Header > snapshots > matches snapshot with visualizer active 1`] = `
+<div>
+  <header
+    class="border-b px-4 sm:px-6 py-3 flex items-center justify-between sticky top-0 z-10 bg-bg"
+    style="border-color: var(--color-border);"
+  >
+    <nav
+      aria-label="Main navigation"
+      class="flex items-center gap-6"
+    >
+      <h1
+        class="text-sm font-semibold"
+      >
+        Dashboard
+      </h1>
+      <button
+        class="text-sm px-3 py-1 rounded transition-colors duration-150 opacity-60 hover:opacity-100
+            "
+        style="color: var(--color-primary); background-color: transparent;"
+      >
+        Form
+      </button>
+      <button
+        aria-current="page"
+        class="text-sm px-3 py-1 rounded transition-colors duration-150 font-semibold
+            "
+        style="color: var(--color-primary); background-color: var(--color-border);"
+      >
+        Visualizer
+      </button>
+    </nav>
+    <button
+      aria-label="Switch to dark theme"
+      class="p-2 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+      title="Dark mode"
+    >
+      <svg
+        class="lucide lucide-moon-icon lucide-moon"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+        />
+      </svg>
+    </button>
+  </header>
+</div>
+`;

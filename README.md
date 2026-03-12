@@ -6,6 +6,9 @@ The orchestrator and Form MFE are built with React and the Visualizer is built w
 
 Since the visualizations is the more complex part, I chose Vue since I am more familiar and could work on this faster and Chart.js is simple, flexible and integrates easier with Vue. Also, one of the advantages of using MFEs is that it allows for difference frameworks and technologies
 
+In the vue app, since there is more room for being creative there, I have added lazy loading since some sections will be below viewport (after charts) when landing in the visualizer app.
+Lazy loading is also used in the orchestrator MFE for loading each MFE wrapper (see lazy/Suspense)
+
 # Communication
 
 The challenge here is how the MFEs should best communicate and share a state. Instead of a URL query parameters which can be limiting or unsafe or a shared state, I chose a custom event based event bus which is framework agnostic and it is the standard practice for MFE architecture.

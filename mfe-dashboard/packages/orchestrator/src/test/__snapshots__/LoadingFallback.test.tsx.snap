@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LoadingFallback > matches snapshot 1`] = `
+<div>
+  <div
+    aria-label="Loading micro frontend content"
+    class="flex items-center justify-center py-20"
+    role="status"
+  >
+    <div
+      class="flex flex-col items-center gap-3"
+    >
+      <div
+        class="w-6 h-6 border=2 rounded-full animate-spin"
+        style="border-top-color: var(--color-primary);"
+      />
+      <span
+        class="text-sm"
+        style="color: var(--secondary);"
+      >
+         
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;

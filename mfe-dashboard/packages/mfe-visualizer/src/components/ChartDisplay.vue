@@ -1,18 +1,19 @@
 <template>
   <div class="flex flex-col gap-4">
     <div
-      v-for="dist in distributions"
-      :key="dist.field"
+      v-for="chart in chartData"
+      :key="chart.field"
     >
       <h3 class="text-xs font-semibold text-secondary uppercase mb-2">
-        {{ dist.fieldLabel }}
+        {{ chart.fieldLabel }}
       </h3>
-      <div class="max-h-[400px] relative">
+
+      <div class="relative">
         <component
-          :is="currentChartComponent"
-          :data="buildChartData(dist)"
-          :options="chartOptions"
-          :aria-label="`${chartType} chart for ${dist.fieldLabel}`"
+          :is="chartComponent"
+          :data="chart.data"
+          :options="computedChartOptions"
+          :aria-label="`${chartType} chart for ${chart.fieldLabel}`"
           role="img"
         />
       </div>
@@ -20,7 +21,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, shallowRef, watch } from "vue";
 import { Bar, Pie } from "vue-chartjs";
 import {
   Chart as ChartJS,
@@ -36,7 +37,6 @@ import type { FormEntry } from "@shared/src/types";
 import {
   computeAllFieldDistributions,
   CHART_COLORS,
-  type FieldDistribution,
 } from "@/utilities/chartDataHelpers";
 
 ChartJS.register(
@@ -56,31 +56,55 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const currentChartComponent = computed(() => {
-  return props.chartType === "bar" ? Bar : Pie;
-});
+const chartComponent = computed(() => (props.chartType === "bar" ? Bar : Pie));
 
 const distributions = computed(() =>
   computeAllFieldDistributions(props.entries),
 );
 
-function buildChartData(dist: FieldDistribution) {
-  return {
-    labels: dist.items.map((item) => item.label),
-    datasets: [
-      {
-        label: dist.fieldLabel,
-        data: dist.items.map((item) => item.count),
-        backgroundColor: CHART_COLORS.slice(0, dist.items.length),
-      },
-    ],
-  };
-}
+const chartData = shallowRef<any[]>([]);
 
-const chartOptions = computed(() => ({
+watch(
+  distributions,
+  (newDist) => {
+    chartData.value = newDist.map((dist) => ({
+      field: dist.field,
+      fieldLabel: dist.fieldLabel,
+      data: {
+        labels: dist.items.map((item) => item.label),
+        datasets: [
+          {
+            label: dist.fieldLabel,
+            data: dist.items.map((item) => item.count),
+            backgroundColor: CHART_COLORS.slice(0, dist.items.length),
+          },
+        ],
+      },
+    }));
+  },
+  { immediate: true },
+);
+
+// More readable and better if more chart types are included in the future
+const baseChartOptions = {
   responsive: true,
-  maintainAspectRatio: true,
-  ...(props.chartType === "bar" && {
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      position: "bottom" as const,
+      labels: {
+        boxWidth: 0,
+        boxHeight: 0,
+      },
+    },
+  },
+};
+
+const computedChartOptions = computed(() => {
+  if (props.chartType !== "bar") return baseChartOptions;
+
+  return {
+    ...baseChartOptions,
     scales: {
       y: {
         beginAtZero: true,
@@ -90,15 +114,6 @@ const chartOptions = computed(() => ({
         },
       },
     },
-  }),
-  plugins: {
-    legend: {
-      position: "bottom" as const,
-      labels: {
-        boxWidth: 0, // removes colored square
-        boxHeight: 0,
-      },
-    },
-  },
-}));
+  };
+});
 </script>

@@ -4,37 +4,37 @@ exports[`ChartDisplay > rendering > matches snapshot for bar chart 1`] = `
 "<div class="flex flex-col gap-4">
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Name</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <bar-stub data="[object Object]" options="[object Object]" aria-label="bar chart for Name" role="img"></bar-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Country</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <bar-stub data="[object Object]" options="[object Object]" aria-label="bar chart for Country" role="img"></bar-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Profession</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <bar-stub data="[object Object]" options="[object Object]" aria-label="bar chart for Profession" role="img"></bar-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Height</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <bar-stub data="[object Object]" options="[object Object]" aria-label="bar chart for Height" role="img"></bar-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Favorite Color</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <bar-stub data="[object Object]" options="[object Object]" aria-label="bar chart for Favorite Color" role="img"></bar-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Favorite Movie</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <bar-stub data="[object Object]" options="[object Object]" aria-label="bar chart for Favorite Movie" role="img"></bar-stub>
     </div>
   </div>
@@ -45,37 +45,37 @@ exports[`ChartDisplay > rendering > matches snapshot for pie chart 1`] = `
 "<div class="flex flex-col gap-4">
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Name</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <pie-stub data="[object Object]" options="[object Object]" aria-label="pie chart for Name" role="img"></pie-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Country</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <pie-stub data="[object Object]" options="[object Object]" aria-label="pie chart for Country" role="img"></pie-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Profession</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <pie-stub data="[object Object]" options="[object Object]" aria-label="pie chart for Profession" role="img"></pie-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Height</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <pie-stub data="[object Object]" options="[object Object]" aria-label="pie chart for Height" role="img"></pie-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Favorite Color</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <pie-stub data="[object Object]" options="[object Object]" aria-label="pie chart for Favorite Color" role="img"></pie-stub>
     </div>
   </div>
   <div>
     <h3 class="text-xs font-semibold text-secondary uppercase mb-2">Favorite Movie</h3>
-    <div class="max-h-[400px] relative">
+    <div class="relative">
       <pie-stub data="[object Object]" options="[object Object]" aria-label="pie chart for Favorite Movie" role="img"></pie-stub>
     </div>
   </div>
