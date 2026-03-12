@@ -1,8 +1,10 @@
 This is a Microfrontend Dashboard.
 
-The orchestrator and Form MFE are built with React and the Visualizer is built with Vue 3 and [Chart.js](https://www.chartjs.org/) (chosen due to prior experience with the tools)
-
 A monorepo with npm workspaces is the simplest approach that keeps packages independent while allowing for shared code. Each package has its own package.json, vite config and tsconfig.
+
+The orchestrator and Form MFE are built with React and the Visualizer is built with Vue 3 and [Chart.js](https://www.chartjs.org/) (chosen due to prior experience with the tools).
+
+Since the visualizations is the more complex part, I chose Vue since I am more familiar and could work on this faster and Chart.js is simple, flexible and integrates easier with Vue. Also, one of the advantages of using MFEs is that it allows for difference frameworks and technologies
 
 # Communication
 
@@ -55,9 +57,16 @@ npm run test
 This is a simple MFE, it manages layout, routing (via state) and the theme (personal choice).
 I could have used react router but for this simple case, simple state routing is enough
 
-# Future enhancements
+# Future enhancements / Production considerations
 
 1. Storybook for mocking components as the app scales, for maintaining a good design system, reusable components strategy
 2. Visualizations need adjustments for the theming
 3. User options in the vue app for Chart type and Column layout can be stored in persistedState so that when the user navigates from one MFE to the other the preference is kept for a better UX
 4. Missing a successful message as a feedback for the form submission and the succesful entry addition
+5. Google Analytics for production
+6. Virtual Scroller if the entries listing grows too long
+7. Caching computations for example the most common answers
+8. As the UI grows more complex and the application scales, a few actions can be made to optimize rendering
+9. For larger scale applications, logging tools such as Graylog will be useful for error monitoring
+10. Future enhancements as each Microfrontend grows will need feature flags for safely releasing to production
+11. For scaling, I will introduce event contract definitions shared across MFEs to enforce type-safe communication, as well as namespaced events
