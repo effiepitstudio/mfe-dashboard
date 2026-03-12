@@ -15,7 +15,7 @@ export const Header: React.FC<HeaderProps> = ({ activeRoute, onNavigate }) => {
 
   return (
     <header
-      className="border-b px-6 py-3 flex items-center justify-between"
+      className="border-b px-4 sm:px-6 py-3 flex items-center justify-between"
       style={{ borderColor: "var(--color-border)" }}
     >
       <nav

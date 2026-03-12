@@ -11,6 +11,7 @@
         aria-label="Display options"
       >
         <ColumnToggle
+          class="hidden sm:block"
           :columnCount="columnCount"
           @update:columnCount="handleColumnCountChange"
         />
@@ -108,7 +109,7 @@ const handleChartTypeChange = (type: "bar" | "pie"): void => {
   grid-template-columns: 1fr 1fr;
 }
 
-@container visualizer (max-width: 600px) {
+@container visualizer (max-width: 639px) {
   .columns-2 {
     // 2 columns become 1 in smaller screens
     grid-template-columns: 1fr;

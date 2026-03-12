@@ -53,3 +53,4 @@ I could have used react router but for this simple case, simple state routing is
 # Future enhancements
 
 1. Storybook for mocking components as the app scales, for maintaining a good design system, reusable components strategy
+2. Visualizations need adjustments for the theming
