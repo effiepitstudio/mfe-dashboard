@@ -28,21 +28,26 @@ In a production environment with untrusted third-party scripts, payloads could b
 # Installation and Running
 
 Node.js >= 18, npm >=9
-Implemented with: node -v
+
+Implemented with:
+node -v
 v18.18.0
+
 npm -v
 9.8.1
 
-**Installing dependencies** (For all microfrontends at once):
-cd mfe-dashboard
+**Installing dependencies**
+(For all microfrontends at once):  
+cd mfe-dashboard  
 npm install
 
-**For running development** (Runs all servers):
+**For running development**
+(Runs all servers):  
 npm run dev
 
 **Navigate to** http://localhost:9000/
 
-**Running test**
+**Running test**  
 npm run test
 
 # Orchestrator MFE
