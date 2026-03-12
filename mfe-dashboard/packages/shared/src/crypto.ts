@@ -73,21 +73,22 @@ export class CryptoService {
       ciphertext: arrayBufferToBase64(cipherBuffer),
       iv: arrayBufferToBase64(iv.buffer),
     };
-    }
-    
-    // decrypts thhe payload encrypted before
+  }
 
-    static async decrypt<T>(cipherText: string; iv: string): Promise<T> {
-        const key = await deriveKey();
-        const cipherBuffer = base64ToArrayBuffer(cipherText);
-        const ivBuffer = base64ToArrayBuffer(iv);
+  // decrypts thhe payload encrypted before
 
-        const decrypted = await crypto.subtle.decrypt(
-            { name: "AES-GCM", iv: new Uint8Array(ivBuffer) },
-            key, cipherBuffer
-        );
+  static async decrypt<T>(cipherText: string, iv: string): Promise<T> {
+    const key = await deriveKey();
+    const cipherBuffer = base64ToArrayBuffer(cipherText);
+    const ivBuffer = base64ToArrayBuffer(iv);
 
-        const text = new TextDecoder().decode(decrypted);
-        return JSON.parse(text) as T;
-    }
+    const decrypted = await crypto.subtle.decrypt(
+      { name: "AES-GCM", iv: new Uint8Array(ivBuffer) },
+      key,
+      cipherBuffer,
+    );
+
+    const text = new TextDecoder().decode(decrypted);
+    return JSON.parse(text) as T;
+  }
 }

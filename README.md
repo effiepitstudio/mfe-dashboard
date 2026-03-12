@@ -12,6 +12,10 @@ State Management
 
 For scalability, maintanability and a structured architecture for data flow, I used FLUX pattern, Redux for React for the write side in the Form MFE. For Vue, I could have used Vuex but for this specific read-only from state case, I think it is redundant. A composable just subscribes to the event bus on mount.
 
+FLUX Write-side: In mfe-dashboard\packages\mfe-form\src\store\formEntriesSlice.ts in the MFE-Form using redux-toolkit
+
+FLUX Read-side: In mfe-dashboard\packages\mfe-visualizer\src\composables\useEntriesSubscription.ts composable in MFE-Visualizer
+
 UI and theme
 
 This is based in a few previous similar implementations of mine regarding CSS variables on root level, user preference media queries etc and it is there just for enhancing the experience. Not actually specified in the requirements
@@ -41,3 +45,7 @@ Orchestrator MFE
 
 This is a simple MFE, it manages layout, routing (via state) and the theme (personal choice).
 I could have used react router but for this simple case, simple state routing is enough
+
+Future enhancements
+
+1. Storybook for mocking components as the app scales, for maintaining a good design system, reusable components strategy

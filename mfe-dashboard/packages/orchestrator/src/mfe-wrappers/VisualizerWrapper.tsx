@@ -7,38 +7,40 @@ Here React renders a div ref as the mount target, on mount tthe vue app is dynam
 
 */
 const VisualizerWrapper: React.FC = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const vueAppRef = useRef<VueApp | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const vueAppRef = useRef<VueApp | null>(null);
 
-    useEffect(() => {
-        let mounted = true;
+  useEffect(() => {
+    let mounted = true;
 
-        async function mountVueApp() {
-            const { default: VisualizerApp } = await import("@mfe-visualizer/App.vue");
+    async function mountVueApp() {
+      const { default: VisualizerApp } =
+        await import("@mfe-visualizer/App.vue");
 
-            if (!mounted || !containerRef.current) return;
+      if (!mounted || !containerRef.current) return;
 
-            const app = createApp(VisualizerApp);
-            app.mount(containerRef.current);
-            vueAppRef.current = app;
-        }
+      const app = createApp(VisualizerApp);
+      app.mount(containerRef.current);
+      vueAppRef.current = app;
+    }
 
-        mountVueApp();
+    mountVueApp();
 
-        return () => {
-            mounted = false;
+    return () => {
+      mounted = false;
 
-            if (vueAppRef.current) {
-                vueAppRef.current.unmount();
-                vueAppRef.current = null;
-            }
-        };
-    }, [])
+      if (vueAppRef.current) {
+        vueAppRef.current.unmount();
+        vueAppRef.current = null;
+      }
+    };
+  }, []);
 
-    return (
-        <div
-            ref={containerRef}
-            role="region"
-            aria-label="Data Visualizer" />
-    );
-}   
+  return (
+    <div
+      ref={containerRef}
+      role="region"
+      aria-label="Data Visualizer"
+    />
+  );
+};
