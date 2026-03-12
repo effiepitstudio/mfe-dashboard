@@ -80,8 +80,23 @@ function buildChartData(dist: FieldDistribution) {
 const chartOptions = computed(() => ({
   responsive: true,
   maintainAspectRatio: true,
+  scales: {
+    y: {
+      beginAtZero: true,
+      ticks: {
+        stepSize: 1,
+        precision: 0,
+      },
+    },
+  },
   plugins: {
-    legend: { position: "bottom" as const },
+    legend: {
+      position: "bottom" as const,
+      labels: {
+        boxWidth: 0, // removes colored square
+        boxHeight: 0,
+      },
+    },
   },
 }));
 </script>
