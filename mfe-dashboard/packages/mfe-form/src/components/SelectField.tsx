@@ -1,0 +1,83 @@
+import React, { useCallback } from "react";
+
+interface SelectFieldProps {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  error: string | null;
+  options: Array<{ value: string; label: string }>;
+  placeholder?: string;
+}
+
+export const SelectField: React.FC<SelectFieldProps> = ({
+  label,
+  value,
+  onChange,
+  error,
+  options,
+  placeholder,
+}) => {
+  const fieldId = `field-${label.toLowerCase().replace(/\a+/g, "-")}`;
+  const errorId = `${fieldId}-error`;
+
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      onChange(event.target.value);
+    },
+    [onChange],
+  );
+
+  return (
+    <div className="flex flex-col gap-l">
+      <label
+        htmlFor={fieldId}
+        className="text-sm font-medium"
+        style={{
+          color: "var(--color-on-surface)",
+        }}
+      >
+        {label}
+      </label>
+      <select
+        id={fieldId}
+        value={value}
+        onChange={handleChange}
+        aria-invalid={!!error}
+        aria-describedby={error ? errorId : undefined}
+        className="px-3 py-2 text-sm rounded border transition-colors appearance-none"
+        style={{
+          backgroundColor: "var(--color-input-bg)",
+          borderColor: error ? "red" : "var(--color-border)",
+          color: value ? "var(--color-on-surface)" : "var(--color-muted)",
+        }}
+      >
+        {placeholder && (
+          <option
+            value=""
+            disabled
+          >
+            {placeholder}
+          </option>
+        )}
+        {options.map((option) => (
+          <option
+            key={option.value}
+            value={option.value}
+          >
+            {option.label}
+          </option>
+        ))}
+      </select>
+      {error && (
+        <span
+          id={errorId}
+          className="text-xs"
+          style={{ color: "red" }}
+          role="alert"
+        >
+          {error}
+        </span>
+      )}
+    </div>
+  );
+};
