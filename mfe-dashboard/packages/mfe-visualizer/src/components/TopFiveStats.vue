@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3 class="text-sm font-semibold mb-3 text-on-surface">
-      Top 5 most common
+    <h3 class="text-sm font-semibold mb-3 text-primary">
+      Top 5 most common for each field
     </h3>
     <div class="flex flex-col gap-4">
       <div
@@ -18,11 +18,13 @@
           <li
             v-for="(item, index) in stat.items"
             :key="item.value"
-            class="flex text-sm gap-1 text-on-surface"
+            class="flex justify-start text-sm gap-1 text-primary w-full"
           >
-            <span class="min-w-4">{{ index + 1 }}</span>
-            <span class="font-semibold">{{ item.value }}</span>
-            <span class="text-xs opacity-80">{{ item.count }}</span>
+            <span class="min-w-[24px]">{{ `${index + 1}.` }}</span>
+            <span class="font-semibold flex-1 min-w-0">{{ item.value }}</span>
+            <span class="text-xs opacity-80 ml-auto">{{
+              `Appearances: ${item.count}`
+            }}</span>
           </li>
         </ol>
       </div>
@@ -33,7 +35,7 @@
 import { computed } from "vue";
 import type { FormEntry } from "@shared/src/types";
 
-import { computedTopFivePerField } from "@/utilities/statsHelpers";
+import { computeTopFivePerField } from "@/utilities/statsHelpers";
 
 interface Props {
   entries: FormEntry[];
@@ -41,5 +43,5 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const topFiveStats = computed(() => computedTopFivePerField(props.entries));
+const topFiveStats = computed(() => computeTopFivePerField(props.entries));
 </script>

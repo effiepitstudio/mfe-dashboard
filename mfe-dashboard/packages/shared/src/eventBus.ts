@@ -2,8 +2,9 @@
 //Inspired by https://dev.to/florianrappl/communication-between-micro-frontends-41fe
 
 export const EVENT_NAMES = {
-  //ENTRIES_UPDATED: "mfe:entries-updated",
+  ENTRIES_UPDATED: "mfe:entries-updated",
   ENTRY_ADDED: "mfe:entry-added",
+  ENTRIES_REQUESTED: "mfe:entries-requested",
   //ENTRIES_CLEAR: "mfe:entries-clear",
 } as const;
 

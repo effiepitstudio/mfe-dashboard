@@ -1,8 +1,8 @@
 // Actions & getters
 
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { FormEntry } from "@shared/types";
-import type { RootState } from ".index";
+import type { FormEntry } from "@shared/src/types";
+import type { RootState } from "./index";
 
 interface FormEntriesState {
   entries: FormEntry[];

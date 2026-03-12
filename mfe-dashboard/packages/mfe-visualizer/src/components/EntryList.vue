@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="text-sm font-semibold mb-3 text-on-surface">Entries by time</h3>
+    <h3 class="text-sm font-semibold mb-3 text-primary">Entries by time</h3>
     <ul
       class="list-none p-0 flex flex-col gap-2"
       role="list"
@@ -9,11 +9,11 @@
       <li
         v-for="entry in entries"
         :key="entry.id"
-        class="py-2 px-0 border-solid border border-border"
+        class="py-2 px-0 border-solid border-b border-border"
         role="listitem"
       >
         <div class="flex items-center justify-between">
-          <span class="font-semibold text-sm text-on-surface">{{
+          <span class="font-semibold text-sm text-primary">{{
             entry.name
           }}</span>
           <time

@@ -6,11 +6,13 @@ import { EntryForm } from "./components/EntryForm";
 const store = createFormStore();
 
 const App: React.FC = () => {
-    <Provider store={store}>
-        <article aria-label="Data Entry form">
-            <EntryForm />
-        </article>
-    </Provider>
+    return (
+        <Provider store={store}>
+            <article aria-label="Data Entry form">
+                <EntryForm />
+            </article>
+        </Provider>
+    );
 };
 
 export default App;

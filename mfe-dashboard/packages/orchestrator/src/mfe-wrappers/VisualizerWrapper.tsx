@@ -44,3 +44,5 @@ const VisualizerWrapper: React.FC = () => {
     />
   );
 };
+
+export default VisualizerWrapper;

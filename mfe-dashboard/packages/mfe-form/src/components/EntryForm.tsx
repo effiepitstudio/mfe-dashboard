@@ -53,7 +53,7 @@ export const EntryForm: React.FC = () => {
   );
 
   const colorOptions = useMemo(
-    () => COLORS.map((c) => ({ value: c.value, label: colorOptions.label })),
+    () => COLORS.map((c) => ({ value: c.value, label: c.label })),
     [],
   );
 
@@ -81,6 +81,7 @@ export const EntryForm: React.FC = () => {
         id: uuidv4(),
         timestamp: new Date().toISOString(),
         name: formValues.name.trim(),
+        country: formValues.country,
         profession: formValues.profession.trim(),
         height: parseInt(formValues.height, 10),
         favoriteColor: formValues.favoriteColor,
@@ -101,15 +102,15 @@ export const EntryForm: React.FC = () => {
     <div className="max-w-lg mx-auto">
       <h2
         className="text-lg font-semibold mb-6"
-        style={{ color: "var(--color-on-surface)" }}
+        style={{ color: "var(--color-primary)" }}
       >
-        New Entry
+        Add New Entry
       </h2>
       <form
         aria-label="Data entry form"
-        className="space-y-4"
+        className="space-y-4 flex flex-col gap-4"
       >
-        // Name field
+        {/* Name field */}
         <FormField
           label="Name"
           value={formValues.name}
@@ -118,7 +119,7 @@ export const EntryForm: React.FC = () => {
           placeholder="Full Name"
           autoComplete="name"
         />
-        // Country field
+        {/* Country field */}
         <SelectField
           label="Country"
           value={formValues.country}
@@ -127,7 +128,7 @@ export const EntryForm: React.FC = () => {
           options={countryOptions}
           placeholder="Select a Country"
         />
-        // Profession field
+        {/* Profession field */}
         <FormField
           label="Profession"
           value={formValues.profession}
@@ -135,7 +136,7 @@ export const EntryForm: React.FC = () => {
           error={validationErrors.profession}
           placeholder="e.g Teacher"
         />
-        // Height field
+        {/* Height field */}
         <FormField
           label="Height (cm)"
           value={formValues.height}
@@ -153,7 +154,7 @@ export const EntryForm: React.FC = () => {
           options={colorOptions}
           placeholder="Pick a color"
         />
-        // Favorite movie
+        {/* Favorite movie */}
         <FormField
           label="favorite movie"
           value={formValues.favoriteMovie}

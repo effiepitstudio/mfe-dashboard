@@ -1,0 +1,19 @@
+{
+  "name": "@dashboard/root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n orchestrator,form,visualizer -c blue,green,magenta \"npm run dev -w packages/orchestrator\" \"npm run dev -w packages/mfe-form\" \"npm run dev -w packages/mfe-visualizer\"",
+    "build": "npm run build -w packages/orchestrator && npm run build -w packages/mfe-form && npm run build -w packages/mfe-visualizer",
+    "test": "npm run test -w packages/mfe-form && npm run test -w packages/mfe-visualizer"
+  },
+  "workspaces": [
+    "packages/shared",
+    "packages/orchestrator",
+    "packages/mfe-form",
+    "packages/mfe-visualizer"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

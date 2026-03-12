@@ -1,7 +1,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
-import { EventBus, EVENT_NAMES, CryptoService } from "@shared/index";
+import { EventBus, EVENT_NAMES, CryptoService } from "@shared/src/index";
 import type { FormEntry } from "@shared/src/types";
-import type { EncryptedPayload } from "@shared/eventBus";
+import type { EncryptedPayload } from "@shared/src/eventBus";
 
 export function useEntriesSubscription() {
   const entries = ref<FormEntry[]>([]);
@@ -25,10 +25,15 @@ export function useEntriesSubscription() {
   };
 
   onMounted(() => {
-    unsubscribe = EventBus.suscribe(
+    unsubscribe = EventBus.subscribe(
       EVENT_NAMES.ENTRIES_UPDATED,
       handleEntriesUpdated,
     );
+    // Request current state from form MFE
+    EventBus.dispatch(EVENT_NAMES.ENTRIES_REQUESTED, {
+      ciphertext: "",
+      iv: "",
+    });
   });
 
   onUnmounted(() => {

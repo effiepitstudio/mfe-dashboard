@@ -32,11 +32,11 @@ export const FormField: React.FC<FormFieldsProps> = ({
   );
 
   return (
-    <div className="flex flex-col gap-l">
+    <div className="flex flex-col mt-4">
       <label
         htmlFor={fieldId}
         className="text-sm font-medium"
-        style={{ color: "var(--color-on-surface)" }}
+        style={{ color: "var(--color-primary)" }}
       >
         {label}
       </label>
@@ -56,7 +56,7 @@ export const FormField: React.FC<FormFieldsProps> = ({
         style={{
           backgroundColor: "var(--color-input-bg)",
           borderColor: error ? "red" : "var(--color-border)",
-          color: "var(--color-on-surface)",
+          color: "var(--color-primary)",
         }}
       />
 

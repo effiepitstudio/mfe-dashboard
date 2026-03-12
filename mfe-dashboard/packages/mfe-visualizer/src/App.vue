@@ -4,7 +4,7 @@
     aria-label="Data Visualizer"
   >
     <header class="flex items-center justify-between mb-1.5">
-      <h2 class="text-lg font-semibold text-on-surface">Visualizer</h2>
+      <h2 class="text-lg font-semibold text-primary">Visualizer</h2>
       <div
         class="flex items-center gap-4"
         role="toolbar"
@@ -64,18 +64,15 @@
     </Transition>
   </section>
 </template>
-<script type="setup" lang="ts">
-import ColumnToggle from "./components/ColumnToggle.vue";
+<script setup lang="ts">
 import { ref, computed } from "vue";
-import { useEntriesSubscription } from "@/composables/useEntriesSubscription";
+import { useEntriesSubscription } from "./composables/useEntriesSubscription";
+import ColumnToggle from "./components/ColumnToggle.vue";
 import ChartDisplay from "./components/ChartDisplay.vue";
 import EntryList from "./components/EntryList.vue";
 import TopFiveStats from "./components/TopFiveStats.vue";
-import ColumnToggle from "./components/ColumnToggle.vue";
 import ChartTypeSwitch from "./components/ChartTypeSwitch.vue";
 import type { FormEntry } from "@shared/src/types";
-import ChartDisplay from "./components/ChartDisplay.vue";
-import TopFiveStats from "./components/TopFiveStats.vue";
 
 const { entries } = useEntriesSubscription();
 
@@ -92,7 +89,7 @@ const handleColumnCountChange = (count: 1 | 2): void => {
   columnCount.value = count;
 };
 
-const handleChartType = (type: "bar" | "pie"): void => {
+const handleChartTypeChange = (type: "bar" | "pie"): void => {
   chartType.value = type;
 };
 </script>
@@ -124,7 +121,11 @@ const handleChartType = (type: "bar" | "pie"): void => {
   padding: 1rem;
   border: 1px solid var(--color-border);
   border-radius: 6px;
-  background-color: var(--color-on-surface);
+}
+
+.chart-panel {
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .columns-2 .chart-panel {

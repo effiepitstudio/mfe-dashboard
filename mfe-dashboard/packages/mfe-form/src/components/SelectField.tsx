@@ -28,12 +28,12 @@ export const SelectField: React.FC<SelectFieldProps> = ({
   );
 
   return (
-    <div className="flex flex-col gap-l">
+    <div className="flex flex-col mt-4">
       <label
         htmlFor={fieldId}
         className="text-sm font-medium"
         style={{
-          color: "var(--color-on-surface)",
+          color: "var(--color-primary)",
         }}
       >
         {label}
@@ -48,7 +48,7 @@ export const SelectField: React.FC<SelectFieldProps> = ({
         style={{
           backgroundColor: "var(--color-input-bg)",
           borderColor: error ? "red" : "var(--color-border)",
-          color: value ? "var(--color-on-surface)" : "var(--color-muted)",
+          color: value ? "var(--color-primary)" : "var(--color-muted)",
         }}
       >
         {placeholder && (

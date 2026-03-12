@@ -1,12 +1,22 @@
 <template>
-  <div>
-    <component
-      :is="currentChartComponent"
-      :data="chartData"
-      :options="chartOptions"
-      :aria-label="`${chartType} chart of entries`"
-      role="img"
-    />
+  <div class="flex flex-col gap-4">
+    <div
+      v-for="dist in distributions"
+      :key="dist.field"
+    >
+      <h3 class="text-xs font-semibold text-color-muted uppercase mb-2">
+        {{ dist.fieldLabel }}
+      </h3>
+      <div class="max-h-[400px] relative">
+        <component
+          :is="currentChartComponent"
+          :data="buildChartData(dist)"
+          :options="chartOptions"
+          :aria-label="`${chartType} chart for ${dist.fieldLabel}`"
+          role="img"
+        />
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -23,7 +33,11 @@ import {
   Legend,
 } from "chart.js";
 import type { FormEntry } from "@shared/src/types";
-import { computedCountryDistribution } from "@/utilities/chartDataHelpers";
+import {
+  computeAllFieldDistributions,
+  CHART_COLORS,
+  type FieldDistribution,
+} from "@/utilities/chartDataHelpers";
 
 ChartJS.register(
   CategoryScale,
@@ -43,33 +57,25 @@ interface Props {
 const props = defineProps<Props>();
 
 const currentChartComponent = computed(() => {
-  props.chartType === "bar" ? Bar : Pie;
+  return props.chartType === "bar" ? Bar : Pie;
 });
 
-const chartData = computed(() => {
-  const distribution = computedCountryDistribution(props.entries);
+const distributions = computed(() =>
+  computeAllFieldDistributions(props.entries),
+);
 
+function buildChartData(dist: FieldDistribution) {
   return {
-    labels: distribution.map((item) => item.countryLabel),
+    labels: dist.items.map((item) => item.label),
     datasets: [
       {
-        label: "Entries by Country",
-        data: distribution.map((item) => item.count),
-        backgroundColor: [
-          "red",
-          "purple",
-          "yellow",
-          "blue",
-          "teal",
-          "grey",
-          "orange",
-          "green",
-          "magenta",
-        ],
+        label: dist.fieldLabel,
+        data: dist.items.map((item) => item.count),
+        backgroundColor: CHART_COLORS.slice(0, dist.items.length),
       },
     ],
   };
-});
+}
 
 const chartOptions = computed(() => ({
   responsive: true,

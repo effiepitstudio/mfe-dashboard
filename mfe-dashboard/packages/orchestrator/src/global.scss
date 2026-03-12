@@ -1,7 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   // Light theme
   --color-surface: #ffffff;
-  --color-on-surface: #1a1a1a;
   --color-border: #e5e7eb;
   --color-primary: #1a1a1a;
   --color-muted: #6b7280;
@@ -10,7 +13,6 @@
 
 [data-theme="dark"] {
   --color-surface: #111111;
-  --color-on-surface: #f0f0f0;
   --color-border: #2a2a2a;
   --color-primary: #f0f0f0;
   --color-muted: #9ca3af;
@@ -35,7 +37,7 @@ body {
     Roboto,
     sans-serif;
   background-color: var(--color-surface);
-  color: var(--color-on-surface);
+  color: var(--color-primary);
   transition:
     background-color 0.2s ease,
     color 0.2s ease;

@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), vue()],
   resolve: {
     alias: {
-      "@shared": path.resolve(__dirname, "../shared/src"),
+      "@shared": path.resolve(__dirname, "../shared"),
       "@mfe-form": path.resolve(__dirname, "../mfe-form/src"),
       "@mfe-visualizer": path.resolve(__dirname, "../mfe-visualizer/src"),
       "@": path.resolve(__dirname, "../mfe-visualizer/src"),

@@ -7,9 +7,10 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ activeRoute, onNavigate }) => {
-  const handleFormClick = useCallback(() => onNavigate("form", [onNavigate]));
-  const handleVizClick = useCallback(() =>
-    onNavigate("visualizer", [onNavigate]),
+  const handleFormClick = useCallback(() => onNavigate("form"), [onNavigate]);
+  const handleVizClick = useCallback(
+    () => onNavigate("visualizer"),
+    [onNavigate],
   );
 
   return (
@@ -52,10 +53,10 @@ const NavButton: React.FC<NavButtonProps> = ({ label, isActive, onClick }) => (
     className={`text-sm px-3 py-1 rounded transition-colors duration-150 ${isActive ? "font-semibold" : "opacity-60 hover:opacity-100"}
             `}
     style={{
-      color: "var(--color-on-surface)",
+      color: "var(--color-primary)",
       backgroundColor: isActive ? "var(--color-border)" : "transparent",
     }}
-    aria-current={isActive ? "page" : "undefined"}
+    aria-current={isActive ? "page" : undefined}
   >
     {label}
   </button>
